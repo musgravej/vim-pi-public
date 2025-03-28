@@ -1,7 +1,7 @@
-au BufNewFile,BufRead *.vim
-	\ colorscheme rigel
+" au BufNewFile,BufRead *.vim
+" 	\ colorscheme rigel
 
-au BufNewFile,BufRead *.txt 
+au BufNewFile,BufRead *.txt
     \ set wrap |
     \ set linebreak |
     \ set tabstop=4 |
@@ -9,7 +9,6 @@ au BufNewFile,BufRead *.txt
     \ set shiftwidth=4 |
     \ set textwidth=0 |
 	" \ colorscheme nord |
-	\ colorscheme industry |
     \ set wrapmargin=0
 
 au BufNewFile,BufRead *.py
@@ -21,20 +20,23 @@ au BufNewFile,BufRead *.py
     \ set autoindent |
     \ set fileformat=unix |
     \ set foldmethod=indent |
-    \ colorscheme onedark
+	" use onedark
+    " \ colorscheme onedark
+    " \ colorscheme nord
 
 au BufNewFile,BufRead *.json
     \ set tabstop=4 |
 	\ set smarttab |
     \ set expandtab |
     \ set softtabstop=4 |
-    \ set shiftwidth=4 |
     \ colorscheme onedark |
+    \ set shiftwidth=4 |
     \ set foldmethod=syntax |
     \ set nowrap
 
  au BufNewFile,BufRead *.js, *.html, *.css <here>:</here>
     \ set tabstop=2 |
     \ set softtabstop=2 |
+    \ colorscheme onedark |
     \ set shiftwidth=2
 

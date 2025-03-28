@@ -12,12 +12,14 @@ set background=dark
 colorscheme darcula
 setlocal spell spelllang=en_us
 set nospell
+" set conceallevel=3
+autocmd BufWritePre *.py %s/\s\+$//e
+autocmd BufWritePre *.txt %s/\s\+$//e
 
-set splitright
-" let g:mapleader = ","
-" let mapleader=","
-let g:mapleader=" "
+let g:mapleader = " "
 let mapleader=" "
+" set g:mapleader = ","
+" let mapleader=","
 set number
 set relativenumber
 set encoding=utf-8
@@ -27,8 +29,7 @@ set hlsearch
 set showcmd
 " set guifont=Inconsolata\ for\ Powerline:h15
 " set guifont=DroidSansMono\ Nerd\ Font\ Mono:h11
-" set guifont=DroidSansMono_Nerd_Font_Mono:h11
-let g:airline_powerline_fonts=1
+set guifont=DroidSansMono_Nerd_Font_Mono:h11
 
 let g:Powerline_symbols='fancy'
 let g:fixjson_indent_size=4
@@ -49,9 +50,29 @@ let g:syntastic_python_checkers=["flake8"]
 let g:syntastic_python_checker_args="--ignore=E501,W601"
 let g:NERDTreeWinSize=40
 let g:NERDTreeShowHidden=1
+
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+		\ 'Modified'  :'✹',
+		\ 'Staged'    :'✚',
+		\ 'Untracked' :'✭',
+		\ 'Renamed'   :'➜',
+		\ 'Unmerged'  :'═',
+		\ 'Deleted'   :'✖',
+		\ 'Dirty'     :'✗',
+		\ 'Ignored'   :'☒',
+		\ 'Clean'     :'✔︎',
+		\ 'Unknown'   :'?',
+		\ }
+let g:NERDTreeGitStatusUseNerdFonts = 1
 " YouCompleteMe, hint options
 set completeopt-=preview
 set completeopt-=popup
+" Use homebrew's clangd
+let g:ycm_clangd_binary_path = trim(system('brew --prefix llvm')).'/bin/clangd'
 let g:ycm_add_preview_to_completeopt=0
 let g:ycm_autoclose_preview_window_after_insertion=1
 

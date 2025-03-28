@@ -9,8 +9,8 @@ A public repo of Vim settings on a Raspberry Pi
     * `mv $HOME/.vim $HOME/.vim.pre`
 
 ### Add new symbolic links:
-* `ln -s ~/github/.vim ~/.vim`
-* `ln -s ~/github/.vim/.vimrc ~/.vimrc`
+* `ln -s {path to vim-pi-public}/.vim ~/.vim`
+* `ln -s {path to vim-pi-public}/.vim/.vim/.vimrc ~/.vimrc`
 
 ### Installing Vundle for the first time
 * [Vundle](https://github.com/VundleVim/Vundle.vim)
